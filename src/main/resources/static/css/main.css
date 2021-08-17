@@ -74,6 +74,7 @@
  
   table{
  margin : 0 auto;
+ width : 90vw;
  margin-top: 30px;
  border-collapse: collapse;
  }
@@ -92,9 +93,9 @@ th, td {
 
 
 .container{
-width: 90vw;
+width: 95vw;
 margin: 0 auto;
-background: #F7FFF7;
+background:var(--primary-100);
 border-radius: var(--borderRadius);
 box-shadow: var(--shadow-3);
 transition: var(--transition);
@@ -126,7 +127,7 @@ padding: 5px 5px;
 }
 
 .form-control{
-background: #F7FFF7;
+background: var(--primary-100);
 border-radius: var(--borderRadius);
 display: flex;
 align-items:center;

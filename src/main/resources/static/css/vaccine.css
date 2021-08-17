@@ -73,7 +73,7 @@
  }
  
   table{
-  width : 90vw;
+  width : 95vw;
  margin : 0 auto;
  margin-top: 30px;
  border-collapse: collapse;
@@ -93,9 +93,9 @@ th, td {
 
 
 .container{
-width: 90vw;
+width: 95vw;
 margin: 0 auto;
-background: #F7FFF7;
+background:var(--primary-100);
 border-radius: var(--borderRadius);
 box-shadow: var(--shadow-3);
 transition: var(--transition);
@@ -173,4 +173,11 @@ margin-top:0;
 	margin-top:0;
 }
 
+
+.home-link{
+	text-decoration: none;
+	color : var(--grey-800);
+	font-size: 1.5rem;
+	padding-left : 20px;
+}
 

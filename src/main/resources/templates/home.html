@@ -1,100 +1,69 @@
-<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
 
-  <head>
-    <title>Corona-Virus Statistics Tracker</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
- 
-<meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CoronaVirusStats-Tracker</title>
-  
-    <!-- main css --> 
-    <link rel="stylesheet" type="text/css" href="css/main.css" />
+<head>
+<title>Coronavirus Tracker Application</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="./css/main.css">
 
-  </head>
+</head>
 
-  <body>
 
- <div class="container">
-    <h1>Corona-Virus Statistics Tracker</h1>
-    <p>This application shows the Corona Virus statistics and vaccine availability details across different states of India</p>
-    
-    <div class="form-control">
-  
-  <h3>Enter the required pin-code and date, to know the availability details of the Covid-19 vaccine in that region </h3>
-  
-   
-  
-  <form class="form inner-form" action="#" th:action="@{/vaccineDetails}" th:object="${vaccineDetails}" method="post">
-  	
-  		<label class="form-label" for="pincode">Pincode</label>
-  		
-  		<input  class="form-input" type="text" placeholder="enter your pincode" th:field="*{pincode}"/> 
-  		
-  		<label for="pincode" class="form-label">Date</label>
-  		
-  		<input class="form-input" type="text" placeholder="DD-MM-YYYY" 
-  		 th:field="*{date}" />
-  	
-  		<input type="submit" class="btn btn-submit" value="submit">
-  		
-  		
-  		</form>
-  <!--
-  
-  	<form class="form inner-form" >
-  	
-  		<label class="form-label" for="pincode">Pincode</label>
-  		
-  		<input  class="form-input" type="text" name="pincode" id="pincode" placeholder="enter your pincode" /> 
-  		
-  		<label for="pincode" class="form-label">Date</label>
-  		
-  		<input class="form-input" type="text" name="date" id="date" placeholder="enter the date you are looking for" />
-  	
-  		<input type="submit" class="btn btn-submit" value="submit">
-  		
-  		
-  		</form>
-  	
-  	 -->
-  	<!--  	
-  		
-  	
-  	<a href="vaccine.html" class="vaccine-link"><button type="submit" name="submit" class="btn btn-submit">submit</button></a>
-  		<input type="submit" class="btn btn-submit">
-  	<a href="vaccine.html" class="vaccine-link">nextpage</a>
-  	-->
-  	
-  
- 	</div>
-  	
-  	<h3 class="stats-heading">Covid-19 statewise statistics:</h3>
-  	
-    <table>
-      <tr>
-        <th>State</th>
-        <th>ConfirmedCases</th>
-        <th>RecoveredCases</th>
-        <th>Deaths</th>
-        <th>ActiveCases</th>
-        <th>Last-Updated-Time</th>
-      </tr>
-      <tr th:each="CoronaVirusStat : ${CoronaVirusStats}">
-        <td th:text="${CoronaVirusStat.state}"></td>
-        <td th:text="${CoronaVirusStat.confirmedCases}"></td>
-        <td th:text="${CoronaVirusStat.recoveredCases}"></td>
-        <td th:text="${CoronaVirusStat.deaths}"></td>
-        <td th:text="${CoronaVirusStat.activeCases}"></td>
-        <td th:text="${CoronaVirusStat.lastUpdatedTime}"></td>
-      </tr>
-    </table>
-  
- </div>
-  </body>
+<body>
+
+	<div class="container">
+		<h1>Corona-Virus Statistics Tracker</h1>
+		<p>This application shows the Corona Virus statistics and vaccine
+			availability details across different states of India</p>
+
+		<div class="form-control">
+
+			<h3>Enter the required pin-code and date, to know the
+				availability details of the Covid-19 vaccine in that region</h3>
+
+
+
+			<form class="form inner-form" action="#"
+				th:action="@{/vaccineDetails}" th:object="${vaccineDetails}"
+				method="post">
+
+				<label class="form-label" for="pincode">Pincode</label> <input
+					class="form-input" id="pincode" type="text"
+					placeholder="enter your pincode" th:field="*{pincode}" /> <label
+					for="date" class="form-label">Date</label> <input
+					class="form-input" id="date" type="text" placeholder="DD-MM-YYYY"
+					th:field="*{date}" /> <input type="submit" class="btn btn-submit"
+					value="submit">
+
+
+			</form>
+
+
+		</div>
+
+		<h3 class="stats-heading">Covid-19 statewise statistics:</h3>
+
+		<table>
+			<tr>
+				<th>State</th>
+				<th>ConfirmedCases</th>
+				<th>RecoveredCases</th>
+				<th>Deaths</th>
+				<th>ActiveCases</th>
+				<th>Last-Updated-Time</th>
+			</tr>
+			<tr th:each="CoronaVirusStat : ${CoronaVirusStats}">
+				<td th:text="${CoronaVirusStat.state}"></td>
+				<td th:text="${CoronaVirusStat.confirmedCases}"></td>
+				<td th:text="${CoronaVirusStat.recoveredCases}"></td>
+				<td th:text="${CoronaVirusStat.deaths}"></td>
+				<td th:text="${CoronaVirusStat.activeCases}"></td>
+				<td th:text="${CoronaVirusStat.lastUpdatedTime}"></td>
+			</tr>
+		</table>
+
+	</div>
+</body>
 
 </html>

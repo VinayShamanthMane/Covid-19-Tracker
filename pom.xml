@@ -16,7 +16,7 @@
 	<name>CoronaVirus-Tracker</name>
 	<description>simple project to track daily count of Corona cases across the world</description>
 	<properties>
-		<java.version>12</java.version>
+		<java.version>11</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
